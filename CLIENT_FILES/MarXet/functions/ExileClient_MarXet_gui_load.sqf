@@ -1,3 +1,13 @@
+/**
+ *
+ * Author: WolfkillArcadia
+ * www.arcasindustries.com
+ * © 2017 Arcas Industries
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
+ 
 private ["_option","_display"];
 disableSerialization;
 
@@ -745,12 +755,12 @@ switch (_option) do
                     if (count(MarXet_TempListingClassname) isEqualTo 1) then
                     {
                         // Items
-                        MarXet_ListingArray = [MarXet_TempListingClassname select 0,str(abs(parseNumber(ctrlText 21011))),_location];
+                        MarXet_ListingArray = [MarXet_TempListingClassname select 0,str(round(abs(parseNumber(ctrlText 21011)))),_location];
                     }
                     else
                     {
                         // vehicles
-                        MarXet_ListingArray = [MarXet_TempListingClassname select 0,str(abs(parseNumber(ctrlText 21011))),_location,MarXet_TempListingClassname select 1];
+                        MarXet_ListingArray = [MarXet_TempListingClassname select 0,str(round(abs(parseNumber(ctrlText 21011)))),_location,MarXet_TempListingClassname select 1];
                         _vehicle = true;
                     };
                     if (!(MarXet_Confirmed) && _vehicle) then
