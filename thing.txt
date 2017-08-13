@@ -1,0 +1,19 @@
+MarXetInventory =
+[
+    // Long form example of a vehicle Listing
+    [
+        _this select 0      --       "ListingID",            //String
+        _this select 1      --       itemAvailable,          //Boolean (false if available for purchase)
+        _this select 2      --       [                       //Array
+                  select 0  --           "ItemClassname",    //STRING
+                  select 1  --           fuel,               //SCALAR
+                  select 2  --           damage,             //SCALAR
+                  select 3  --           "hitpoints",        //STRING
+                  select 4  --           "pin_code"          //STRING
+        _this select 2      --       ]
+        _this select 3      --       "Price",                //String
+        _this select 4      --       "SellersUID",           //String
+    ],
+
+    ["ListingID",itemAvailable,["ItemClassname"],"Price","SellersUID"]      // Example of Item/Magazine/Weapon listing
+];
