@@ -2,6 +2,8 @@
 # Welcome to MarXet!
 ##### Exile's Leading Inmate Based Marketplace
 
+#### DEVELOPMENT AND SUPPORT HAS CEASED.
+
 MarXet is a server/client script made for Exile to provide a unique and dynamic player based market. Players can create new "listings" for any item or persistent vehicle in game with it's own price. Other players can then purchase any item/vehicle from MarXet.
 
 #### Features
@@ -11,6 +13,40 @@ MarXet is a server/client script made for Exile to provide a unique and dynamic 
 * Accessible via placed MarXet Traders
 * GUI built to match Exile's GUI theme
 * Persistent, saves to the database
+
+### License Overview:
+This work is protected by [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0/). By using, downloading, or copying any of the work contained, you agree to the license included.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">MarXet</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/WolfkillArcadia/MarXet" property="cc:attributionName" rel="cc:attributionURL">WolfkillArcadia</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+The following overview is a human-readable summary of (and not a substitute for) [the full license](http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+
+#### You are free to:
+
+**Share** — copy and redistribute the material in any medium or format.
+
+**Adapt** — remix, transform, and build upon the material.
+
+
+
+#### Under the following terms:
+
+**Attribution** — You must give **appropriate credit**, provide a link to the license, and **indicate if changes were made**. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+**NonCommercial** — You may not use the material for commercial purposes.
+
+**ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the **same license** as the original.
+
+**No additional restrictions** — You may not apply legal terms or **technological measures** that legally restrict others from doing anything the license permits.
+
+
+
+#### Notices:
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable **exception or limitation**.
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as **publicity, privacy, or moral rights** may limit how you use the material.
+
+
 
 #### Installation
 Installation is simple and easy with only one Exile overwrite.
