@@ -1,3 +1,13 @@
+/**
+ *
+ * Author: WolfkillArcadia
+ * www.arcasindustries.com
+ * © 2017 Arcas Industries
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
+
 ["Loading MarXet Inventory...","InventoryInitalize"] call ExileServer_MarXet_util_log;
 
 MarXetInventory = [];

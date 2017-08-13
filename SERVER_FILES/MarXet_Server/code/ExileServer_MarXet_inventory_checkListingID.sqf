@@ -1,17 +1,12 @@
-/*
-
- 	Name: ExileServer_MarXet_inventory_checkListingID
-
- 	Author(s): Mezo, Shix, and WolfkillArcadia
-    Copyright (c) 2016 Evolved Survival Gaming
-
-    This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
-    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
-
- 	Description:
-    Simple script to confirm that the listing ID doesn't already exist
-
-*/
+/**
+ *
+ * Author: WolfkillArcadia
+ * www.arcasindustries.com
+ * © 2017 Arcas Industries
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
 
 _listingID = _this;
 _isAvailable = true;

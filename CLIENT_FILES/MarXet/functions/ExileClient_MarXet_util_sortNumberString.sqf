@@ -1,3 +1,13 @@
+/**
+ *
+ * Author: WolfkillArcadia
+ * www.arcasindustries.com
+ * © 2017 Arcas Industries
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
+
 /*
 
     ALL THIS DOES IS SORT A NUMBER THAT IS A STRING IN AN ARRAY OF MIXED STRINGS
