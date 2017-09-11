@@ -28,5 +28,26 @@ class CfgMarXet
             Default (0) uses Exile's default position function
         */
         staticVehicleSpawning = 0;
+
+        /*
+            If you want to remove the ability to buyback their item for free or a modified price
+            Options:
+                0: Seller can buy back their sold item for free (or just the rekey cost for vehicles)
+                1: Seller has to pay the list price for their item (plus rekey cost for vehicles)
+        */
+        disableSellerBuyback = 0;
+
+        /*
+            A price divisor for an item the seller is trying to buy back, only works if disableSellerBuyback == 0!
+            Options:
+                Any float number between 0 and 1
+                0: Disable
+            Example:
+                If sellerBuybackPercentage == 0.5, the price shown to the seller will be 50% of the list price.
+                Lets say the list price is 500:
+                    500 * 0.5 = 250;
+                    500 - 250 = 250 price to seller.
+        */
+        sellerBuybackPercentage = 0.5;
     };
 };

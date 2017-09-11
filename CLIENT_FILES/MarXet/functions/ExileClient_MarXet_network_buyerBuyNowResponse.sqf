@@ -78,7 +78,7 @@ else
 		};
 	};
 
-    if (_sellersUID isEqualTo (getplayerUID player)) then
+    if (_sellersUID isEqualTo (getplayerUID player) && {getNumber(missionConfigFile >> "CfgMarXet" >> "Settings" >> "disableSellerBuyback") isEqualTo 0}) then
     {
         ["SuccessTitleAndText", ["Bought Back", "Couldn't let go of it, huh? I understand :)"]] call ExileClient_gui_toaster_addTemplateToast;
     }

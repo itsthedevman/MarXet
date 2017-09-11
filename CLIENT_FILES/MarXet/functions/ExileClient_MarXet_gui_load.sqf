@@ -140,7 +140,7 @@ switch (_option) do
                     _text = "";
                     _ClassName = (_x select 2) select 0;
                     _listingID = _x select 0;
-                    _price = _x select 3;
+                    _price = parseNumber(_x select 3);
                     _sellersUID = _x select 4;
                     // Only display avaiable items
                     if ((_x select 1) isEqualTo 1) then
@@ -152,17 +152,18 @@ switch (_option) do
                             _name = getText(configFile >> _configName >> _ClassName >> "displayName");
                             _index = _itemsLB lbAdd _name;
                             _itemsLB lbSetPicture [_index, getText(configFile >> _configName >> _ClassName >> "picture")];
-                            if (_sellersUID isEqualTo (getPlayerUID player)) then
+                            if (_sellersUID isEqualTo (getPlayerUID player) && {getNumber(missionConfigFile >> "CfgMarXet" >> "Settings" >> "disableSellerBuyback") isEqualTo 0}) then
                             {
-                                _price = str(0);
+                                _divisor = getNumber(missionConfigFile >> "CfgMarXet" >> "Settings" >> "sellerBuybackPercentage");
+                                _price = if (_divisor > 0 && {_divisor < 1}) then { _price - (_price * _divisor) } else { 0 };
                             };
-                            _itemsLB lbSetTextRight [_index, format["%1", _price]];
+                            _itemsLB lbSetTextRight [_index, format["%1", round(_price)]];
                 	    	_itemsLB lbSetPictureRight [_index, "exile_assets\texture\ui\poptab_trader_ca.paa"];
-                            if (_clientMoney < parseNumber(_price)) then
+                            if (_clientMoney < _price) then
                             {
-                                lbSetColorRight [21017,_index, [0.8,0,0,1]];
+                                _itemsLB lbSetColorRight [_index, [0.8,0,0,1]];
                             };
-                            _text = format["%1:%2:%3:%4:%5",_name,_price,_listingID,_ClassName,_sellersUID];
+                            _text = format["%1:%2:%3:%4:%5",_name,str(_price),_listingID,_ClassName,_sellersUID];
                             _itemsLB lbSetData [_index,_text];
                         };
                     };

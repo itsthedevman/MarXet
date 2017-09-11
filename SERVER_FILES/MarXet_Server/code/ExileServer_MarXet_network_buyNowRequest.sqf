@@ -47,9 +47,10 @@ try {
     _price = parseNumber(_stock select 3);
 
     // But we are going to check to make sure anyway, set the price to 0 if they are.
-    if (_buyerUID isEqualTo _sellersUID) then
+    if (_buyerUID isEqualTo _sellersUID && {getNumber(missionConfigFile >> "CfgMarXet" >> "Settings" >> "disableSellerBuyback") isEqualTo 0}) then
     {
-        _price = 0;
+        _divisor = getNumber(missionConfigFile >> "CfgMarXet" >> "Settings" >> "sellerBuybackPercentage");
+        _price = if (_divisor > 0 && {_divisor < 1}) then { _price - (_price * _divisor) } else { 0 };
         _buyerIsSeller = true;
     };
 
