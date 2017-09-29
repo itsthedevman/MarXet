@@ -699,7 +699,7 @@ switch (_option) do
             case 0:
             {
                 private ["_dropdown","_dropdownIndex","_location","_rightDropdown","_rightDropdownOption","_rightLocation","_newPinCode"];
-                ctrlEnable [21014,false];
+                (_display displayCtrl 21014) ctrlEnable false;
                 if !(MarXet_SelectedListingID isEqualTo "" || MarXet_SelectedListingID isEqualTo []) then
                 {
                     _dropdown = _display displayCtrl 21019;
@@ -743,8 +743,8 @@ switch (_option) do
             {
                 private ["_dropdown","_dropdownIndex","_location","_vehicle"];
                 MarXet_ListingArray = [];
-                ctrlEnable [21024,false];
-                ctrlEnable [21011,false];
+                (_display displayCtrl 21014) ctrlEnable false;
+                (_display displayCtrl 21011) ctrlEnable false;
 
                 _dropdown = _display displayCtrl 21019;
                 _dropdownIndex = lbCurSel _dropdown;

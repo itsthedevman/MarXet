@@ -97,8 +97,8 @@ else
         ["Sort",MarXet_Sorting] call ExileClient_MarXet_gui_load;
         ["LoadLeft"] call ExileClient_MarXet_gui_load;
         ["LoadRight"] call ExileClient_MarXet_gui_load;
-        //ctrlEnable [21024,true];
-        //ctrlEnable [21011,true];
+        (_dialog displayCtrl 21014) ctrlEnable true;
+        (_dialog displayCtrl 21011) ctrlEnable true;
     };
 
 };
