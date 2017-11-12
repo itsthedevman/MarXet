@@ -45,6 +45,15 @@ try {
 
     // Assume the seller is different than the buyer.
     _price = parseNumber(_stock select 3);
+    
+    // Check to see if the sellers locker is maxed (thx to Adam Kadmon)
+    _sellerLocker = format["getLocker:%1", _sellersUID] call ExileServer_system_database_query_selectSingleField;
+    _lockerLimit = (getNumber(missionConfigFile >> "CfgLocker" >> "maxDeposit"));
+
+    if ((_sellerLocker + _price) > _lockerLimit) then
+    {
+       throw "Seller's locker is maxed out. They will need remove some money before this item can be purchased!";
+    };
 
     // But we are going to check to make sure anyway, set the price to 0 if they are.
     if (_buyerUID isEqualTo _sellersUID && {getNumber(missionConfigFile >> "CfgMarXet" >> "Settings" >> "disableSellerBuyback") isEqualTo 0}) then
