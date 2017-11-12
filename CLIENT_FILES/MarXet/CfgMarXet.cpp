@@ -49,5 +49,13 @@ class CfgMarXet
                     500 - 250 = 250 price to seller.
         */
         sellerBuybackPercentage = 0.5;
+        
+        /*
+            This limits how many listings a player can create. This is an non-inclusive number meaning if the max is 5, the player can list 5 items, but not 6. 
+            Options:
+                Any whole number
+                -1: Disable
+        */
+        maxNumberOfListings = -1;
     };
 };

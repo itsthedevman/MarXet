@@ -21,6 +21,7 @@ _newListing = [];
 try {
     _playerObject = _sessionID call ExileServer_system_session_getPlayerObject;
     _playerUID = getPlayerUID _playerObject;
+    
     if (isNull _playerObject) then
 	{
 		throw "Who are you again?";
@@ -29,7 +30,16 @@ try {
 	{
 		throw "Dead players shouldn't be selling stuff, except their soul to the devil";
 	};
-
+    
+    _maxListings = getNumber(missionConfigFile >> "CfgMarXet" >> "Settings" >> "maxNumberOfListings");
+    if !(_maxListings isEqualTo -1) then 
+    {
+        if ((format["getListingsCount:%1", _playerUID] call ExileServer_system_database_query_selectSingleField) > _maxListings) then 
+        {
+            throw "You cannot list any more items. You may list more items once your previously listed items have been sold";
+        };
+    };
+        
     if (_itemClassname isEqualTo "") then
     {
         throw "Classname doesn't exist!";
