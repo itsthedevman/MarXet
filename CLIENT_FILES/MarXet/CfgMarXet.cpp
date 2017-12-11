@@ -57,5 +57,13 @@ class CfgMarXet
                 -1: Disable
         */
         maxNumberOfListings = -1;
+
+        /*
+            Disables or enables the ability to list Vehicles in MarXet
+            Options:
+                0: Allow vehicles to be listed
+                1: Do not allow vehicles to be listed
+        */
+        disableVehicleListing = 0;
     };
 };

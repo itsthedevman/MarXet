@@ -68,6 +68,10 @@ try {
         {
             throw "Vehicle object is nil, cannot process!";
         };
+        if !(getNumber(missionConfigFile >> "CfgMarXet" >> "Settings" >> "disableVehicleListing") isEqualTo 0) then 
+        {
+            throw "Vehicle listing is disabled";
+        };
         _availableHitpoints = getAllHitPointsDamage _vehicleObject;
         _vehicleHitpoints = [];
 

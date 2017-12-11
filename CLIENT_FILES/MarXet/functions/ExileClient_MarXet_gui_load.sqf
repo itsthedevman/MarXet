@@ -312,25 +312,28 @@ switch (_option) do
 
         	default
         	{
-                private ["_nearVehicles","_name","_index","_text"];
-                _nearVehicles = nearestObjects [player, ["LandVehicle", "Air", "Ship"], 50];
+                if (getNumber(missionConfigFile >> "CfgMarXet" >> "Settings" >> "disableVehicleListing") isEqualTo 0) then 
                 {
-                    if (((locked _x) != 2) && (locked _x) != 1) then
+                    private ["_nearVehicles","_name","_index","_text"];
+                    _nearVehicles = nearestObjects [player, ["LandVehicle", "Air", "Ship"], 50];
                     {
-                        if (local _x) then
+                        if (((locked _x) != 2) && (locked _x) != 1) then
                         {
-                            if (alive _x) then
+                            if (local _x) then
                             {
-                                _name = getText(configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName");
-                                _index = _inventoryListBox lbAdd _name;
-                                _inventoryListBox lbSetPicture [_index, getText(configFile >> "CfgVehicles" >> (typeOf _x) >> "picture")];
-                                _text = format["%1:%2",(typeOf _x),_name];
-                                _inventoryListBox lbSetData [_index,_text];
-                                MarXet_VehicleObjectArray pushBack _x;
+                                if (alive _x) then
+                                {
+                                    _name = getText(configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName");
+                                    _index = _inventoryListBox lbAdd _name;
+                                    _inventoryListBox lbSetPicture [_index, getText(configFile >> "CfgVehicles" >> (typeOf _x) >> "picture")];
+                                    _text = format["%1:%2",(typeOf _x),_name];
+                                    _inventoryListBox lbSetData [_index,_text];
+                                    MarXet_VehicleObjectArray pushBack _x;
+                                };
                             };
                         };
-                    };
-                } forEach _nearVehicles;
+                    } forEach _nearVehicles;
+                };
         	};
         };
 
@@ -663,8 +666,12 @@ switch (_option) do
                 _index = _rightDropdown lbAdd "Equipment Listings";
                 _rightDropdown lbSetValue [_index,0];
 
-                _index = _rightDropdown lbAdd "Vehicle Listings";
-                _rightDropdown lbSetValue [_index,1];
+                if (getNumber(missionConfigFile >> "CfgMarXet" >> "Settings" >> "disableVehicleListing") isEqualTo 0) then 
+                {
+                    _index = _rightDropdown lbAdd "Vehicle Listings";
+                    _rightDropdown lbSetValue [_index,1];
+                };
+                
                 _rightDropdown lbSetCurSel 0;
             };
             case ("Sort"):
@@ -743,7 +750,7 @@ switch (_option) do
             {
                 private ["_dropdown","_dropdownIndex","_location","_vehicle"];
                 MarXet_ListingArray = [];
-                (_display displayCtrl 21014) ctrlEnable false;
+                (_display displayCtrl 21024) ctrlEnable false;
                 (_display displayCtrl 21011) ctrlEnable false;
 
                 _dropdown = _display displayCtrl 21019;

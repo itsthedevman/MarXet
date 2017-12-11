@@ -67,9 +67,12 @@ _dialog = uiNameSpace getVariable ["RscMarXetDialog", displayNull];
 // Only update it when its still opened
 if !(_dialog isEqualTo displayNull) then
 {
+    MarXet_TempListingClassname = "";
+    (_dialog displayCtrl 21018) lbSetCurSel -1;
+    
     ["Sort",MarXet_Sorting] call ExileClient_MarXet_gui_load;
     ["LoadLeft"] call ExileClient_MarXet_gui_load;
     ["LoadRight"] call ExileClient_MarXet_gui_load;
-    (_dialog displayCtrl 21014) ctrlEnable true;
+    (_dialog displayCtrl 21024) ctrlEnable true;
     (_dialog displayCtrl 21011) ctrlEnable true;
 };
