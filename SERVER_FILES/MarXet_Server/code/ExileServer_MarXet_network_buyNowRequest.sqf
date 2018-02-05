@@ -226,7 +226,7 @@ try {
         // If seller isn't connected, update the database. If they are, process like normal.
         if (_sellerPlayerObject isEqualTo "") then
         {
-            _stats = format["getAccountStats:%1", _sellersUID] call ExileServer_system_database_query_selectSingleField;
+            _stats = format["getAccountStats:%1", _sellersUID] call ExileServer_system_database_query_selectSingle;
             _sellersMoney = _stats select 4;
             _newSellerMoney = _sellersMoney + _price;
             format["updateLocker:%1:%2",_newSellerMoney, _sellersUID] call ExileServer_system_database_query_fireAndForget;
