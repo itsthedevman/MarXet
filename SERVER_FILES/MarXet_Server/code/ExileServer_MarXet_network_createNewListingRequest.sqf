@@ -49,6 +49,11 @@ try {
     {
         throw "The sale price was less than or equal to 0";
     };
+    
+    if (_price > 100000) then //Allow server owners to set a maximum sale listing price
+    {
+        throw "The sale price was too high";
+    };
 
     _listingID = call ExileServer_MarXet_inventory_createListingID;
 
