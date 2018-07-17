@@ -62,6 +62,14 @@ try {
         throw "Listing ID failed to create. Blame the devs";
     };
 
+    _sellerLocker = format["getLocker:%1", _playerUID] call ExileServer_system_database_query_selectSingleField;
+    _lockerLimit = (getNumber(missionConfigFile >> "CfgLocker" >> "maxDeposit"));
+
+    if ((_sellerLocker + _price) > _lockerLimit) then
+    {
+       throw "Your locker is maxed out. You will need to remove poptabs before this item can be listed";
+    };
+
     _vehicle = false;
     _la = [_itemClassname];
 
