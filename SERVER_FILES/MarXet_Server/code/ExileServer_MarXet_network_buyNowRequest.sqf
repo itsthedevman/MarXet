@@ -52,7 +52,7 @@ try {
 
     if ((_sellerLocker + _price) > _lockerLimit) then
     {
-       throw "Seller's locker is maxed out. They will need remove some money before this item can be purchased!";
+       throw "Seller's locker is maxed out. They will need remove some poptabs before this item can be purchased!";
     };
 
     // But we are going to check to make sure anyway, set the price to 0 if they are.
